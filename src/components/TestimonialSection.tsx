@@ -5,9 +5,21 @@ import { Testimonial } from '../types';
 
 const TESTIMONIAL_EMAIL_ENDPOINT = import.meta.env.VITE_TESTIMONIAL_EMAIL_ENDPOINT as string | undefined;
 const TESTIMONIAL_TO_EMAIL = import.meta.env.VITE_TESTIMONIAL_TO_EMAIL as string | undefined;
+const TESTIMONIAL_STORAGE_KEY = 'shivamanig_testimonials_v2';
+
+const SEED_TESTIMONIALS: Testimonial[] = [
+  {
+    id: 'seed-desikan',
+    name: 'Dr. K. E. Srinivasa Desikan',
+    role: 'Assistant Professor',
+    company: 'IIIT Kurnool',
+    text: 'Shivamani exhibits remarkable research caliber in machine learning and deep learning. His work on convolutional neural networks and terrain segmentation highlights rigorous mathematical and technical execution.',
+    createdAt: '2025-07-20',
+  }
+];
 
 export default function TestimonialSection() {
-  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+  const [testimonials] = useState<Testimonial[]>(SEED_TESTIMONIALS);
   const [formOpen, setFormOpen] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
@@ -19,35 +31,9 @@ export default function TestimonialSection() {
   const [company, setCompany] = useState('');
   const [text, setText] = useState('');
 
-  // Initial Seed Testimonials to make it look active & premium
-  const SEED_TESTIMONIALS: Testimonial[] = [
-    {
-      id: 'seed-desikan',
-      name: 'Dr. K. E. Srinivasa Desikan',
-      role: 'Assistant Professor',
-      company: 'IIIT Kurnool',
-      text: 'Shivamani exhibits remarkable research caliber in machine learning and deep learning. His work on convolutional neural networks and terrain segmentation highlights rigorous mathematical and technical execution.',
-      createdAt: '2025-07-20',
-    }
-  ];
-
   useEffect(() => {
-    const saved = localStorage.getItem('shivamanig_testimonials_v2');
-    if (saved) {
-      try {
-        setTestimonials(JSON.parse(saved));
-      } catch (err) {
-        setTestimonials(SEED_TESTIMONIALS);
-      }
-    } else {
-      setTestimonials(SEED_TESTIMONIALS);
-    }
+    localStorage.removeItem(TESTIMONIAL_STORAGE_KEY);
   }, []);
-
-  const saveTestimonials = (updated: Testimonial[]) => {
-    setTestimonials(updated);
-    localStorage.setItem('shivamanig_testimonials_v2', JSON.stringify(updated));
-  };
 
   const sendTestimonialEmail = async (testimonial: Testimonial) => {
     if (TESTIMONIAL_EMAIL_ENDPOINT) {
@@ -127,13 +113,6 @@ export default function TestimonialSection() {
     }
   };
 
-  const handleDelete = (id: string) => {
-    // Basic support to clear a custom added testimonial (not seed ones)
-    if (id.startsWith('seed-')) return;
-    const updated = testimonials.filter((t) => t.id !== id);
-    saveTestimonials(updated);
-  };
-
   return (
     <section id="testimonials" className="py-24 relative overflow-hidden bg-brand-dark">
       {/* Subtle background light */}
@@ -175,7 +154,7 @@ export default function TestimonialSection() {
             >
               <CheckCircle2 className="w-5 h-5 shrink-0 text-stone-400" />
               <div>
-                <span className="font-bold">Submission Sent:</span> Thank you! Your recommendation has been emailed for review.
+                <span className="font-bold">Submission sent to email.</span>
               </div>
             </motion.div>
           )}
@@ -311,16 +290,6 @@ export default function TestimonialSection() {
 
                 <div className="flex flex-col items-end gap-1 shrink-0">
                   <span className="text-[9px] text-stone-550 uppercase tracking-wider leading-none">{t.createdAt}</span>
-                  {/* Option to delete user testimonials locally */}
-                  {!t.id.startsWith('seed-') && (
-                    <button
-                      onClick={() => handleDelete(t.id)}
-                      className="text-stone-500 hover:text-white text-[9px] uppercase tracking-wider cursor-pointer mt-1.5"
-                      id={`delete-testimonial-${t.id}`}
-                    >
-                      Delete
-                    </button>
-                  )}
                 </div>
               </div>
             </motion.div>
