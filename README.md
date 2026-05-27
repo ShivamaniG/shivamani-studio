@@ -4,6 +4,11 @@ A personal portfolio website for Shivamani, built with Google AI Studio and expo
 
 The site presents Shivamani's skills, experience, projects, research work, and testimonials in a polished single-page portfolio.
 
+## Live Deployment
+
+Deployed with Cloudflare Pages and Workers:
+https://shivamani-studio.pages.dev/
+
 ## Built With
 
 - Google AI Studio
@@ -11,6 +16,8 @@ The site presents Shivamani's skills, experience, projects, research work, and t
 - TypeScript
 - Vite
 - Tailwind CSS
+- Cloudflare Pages
+- Cloudflare Workers
 
 ## Run Locally
 
