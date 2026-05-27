@@ -9,10 +9,10 @@
   --brand-card: rgba(18, 18, 18, 0.4);
 
   --glass-card-bg: rgba(15, 15, 15, 0.5);
-  --glass-card-border: rgba(255, 255, 255, 0.16);
-  --glass-card-hover-border: rgba(255, 255, 255, 0.32);
+  --glass-card-border: rgba(255, 255, 255, 0.09);
+  --glass-card-hover-border: rgba(255, 255, 255, 0.18);
   --glass-capsule-bg: rgba(15, 15, 15, 0.65);
-  --glass-capsule-border: rgba(255, 255, 255, 0.2);
+  --glass-capsule-border: rgba(255, 255, 255, 0.1);
 
   --scroll-track: #0d0d0d;
   --scroll-thumb: #262626;
@@ -208,7 +208,7 @@
   border: 1px solid var(--glass-capsule-border);
 }
 
-/* High-contrast crisp border enhancements for ultra-high dark mode visibility */
+/* Softer border enhancements for dark mode glass surfaces */
 .border-white\/5,
 .border-white\/\[0\.05\],
 .border-white\/10,
@@ -221,13 +221,13 @@
 .border-stone-800\/40,
 .border-white\/\[0\.02\],
 .border-white\/\[0\.01\] {
-  border-color: rgba(255, 255, 255, 0.18) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
 }
 
 .border-white\/20,
 .border-white\/\[0\.2\],
 .hover\:border-white\/20:hover {
-  border-color: rgba(255, 255, 255, 0.38) !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
 }
 
 /* Adaptations for Light Mode System */
@@ -341,4 +341,3 @@
     filter: invert(1);
   }
 }
-
