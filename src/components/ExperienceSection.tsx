@@ -72,11 +72,11 @@ export default function ExperienceSection() {
             >
               {experiences.map((exp) => (
                 <motion.div variants={itemVariants} key={exp.id} className="group text-left" id={`experience-${exp.id}`}>
-                  <div className="glass-card glass-card-hover p-6 rounded-2xl text-left">
+                  <div className="glass-card glass-card-hover p-6 sm:p-8 rounded-2xl text-left">
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
                       <div>
-                        <h3 className="font-display font-medium text-xl text-stone-100 group-hover:text-white transition-colors">{exp.role}</h3>
-                        <p className="text-xs text-stone-400 mt-1 uppercase tracking-wider">{exp.company}</p>
+                        <h3 className="font-display font-medium text-xl sm:text-2xl text-stone-100 group-hover:text-white transition-colors">{exp.role}</h3>
+                        <p className="text-sm text-stone-400 mt-1 uppercase tracking-wider">{exp.company}</p>
                       </div>
                       <div className={`flex items-center gap-1.5 border rounded-full px-3 py-1 text-[9px] self-start sm:self-auto shrink-0 uppercase tracking-wider leading-none ${exp.present ? 'bg-[var(--accent-signal)]/10 border-[var(--accent-signal)]/30 text-[var(--accent-signal)]' : 'bg-white/5 border-white/5 text-stone-400'}`}>
                         <Calendar className="w-3.5 h-3.5" />
@@ -84,9 +84,9 @@ export default function ExperienceSection() {
                       </div>
                     </div>
 
-                    {exp.description && <p className="text-stone-300 text-sm leading-relaxed font-light mt-3">{exp.description}</p>}
+                    {exp.description && <p className="text-stone-300 text-sm sm:text-base leading-relaxed font-light mt-3">{exp.description}</p>}
 
-                    <ul className="mt-5 space-y-2.5 text-stone-400 text-[12px] sm:text-xs font-light tracking-wide list-none pl-0">
+                    <ul className="mt-5 space-y-2.5 text-stone-400 text-sm font-light tracking-wide list-none pl-0">
                       {exp.bullets.map((bullet) => (
                         <li key={bullet} className="flex items-start gap-2 text-left">
                           <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-copper)] mt-1.5 shrink-0" />
@@ -97,7 +97,7 @@ export default function ExperienceSection() {
 
                     <div className="flex flex-wrap gap-2 mt-5 pt-4 border-t border-white/[0.04]">
                       {exp.tags.map((tag) => (
-                        <span key={tag} className="px-2.5 py-1 rounded-full bg-white/5 border border-white/5 text-[9px] text-stone-300 uppercase tracking-wider">
+                        <span key={tag} className="px-2.5 py-1 rounded-full bg-white/5 border border-white/5 text-[10px] text-stone-300 uppercase tracking-wider">
                           {tag}
                         </span>
                       ))}

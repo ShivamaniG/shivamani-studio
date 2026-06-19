@@ -55,12 +55,12 @@ export default function AboutSection() {
             </p>
           </div>
 
-          <div className="lg:col-span-4 glass-card p-6 rounded-2xl text-left" id="profile-achievements">
-            <h3 className="font-display font-medium text-base text-stone-100 mb-5 flex items-center gap-2">
+          <div className="lg:col-span-4 glass-card p-5 sm:p-6 rounded-2xl text-left" id="profile-achievements">
+            <h3 className="font-display font-medium text-lg sm:text-xl text-stone-100 mb-5 flex items-center gap-2">
               <Award className="w-4 h-4 text-[var(--accent-copper)]" />
               <span>Achievements</span>
             </h3>
-            <ul className="space-y-2.5 text-stone-400 text-xs font-light leading-relaxed">
+            <ul className="space-y-2.5 text-stone-400 text-sm font-light leading-relaxed">
               {achievements.map((item) => (
                 <li key={item} className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-copper)] mt-1.5 shrink-0" />
@@ -71,22 +71,22 @@ export default function AboutSection() {
           </div>
         </div>
 
-        <div className="glass-card p-6 rounded-2xl text-left max-w-5xl">
-          <h3 className="font-display font-medium text-base text-stone-100 mb-5 flex items-center gap-2">
+        <div className="glass-card p-7 sm:p-8 rounded-2xl text-left max-w-7xl">
+          <h3 className="font-display font-medium text-xl sm:text-2xl text-stone-100 mb-6 flex items-center gap-2">
             <GraduationCap className="w-4 h-4 text-stone-400" />
             <span>Education Timeline</span>
           </h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {education.map((edu) => (
-              <div key={edu.degree} className="p-4 rounded-xl bg-white/[0.01] border border-white/[0.03] text-left">
+              <div key={edu.degree} className="p-5 sm:p-6 rounded-xl bg-white/[0.01] border border-white/[0.03] text-left">
                 <div className="flex items-center justify-between gap-3 mb-2">
-                  <span className="text-[9px] text-stone-400 uppercase tracking-wider">{edu.period}</span>
+                  <span className="text-xs text-stone-400 uppercase tracking-wider">{edu.period}</span>
                   <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-copper)]" />
                 </div>
-                <h4 className="font-display font-medium text-sm text-stone-200 leading-snug">{edu.degree}</h4>
-                <p className="text-[10px] text-stone-300 mt-2 uppercase tracking-wider">{edu.institution}</p>
-                <p className="text-stone-400 text-xs font-light mt-1.5 leading-relaxed">{edu.note}</p>
+                <h4 className="font-display font-medium text-xl sm:text-2xl text-stone-200 leading-snug">{edu.degree}</h4>
+                <p className="text-xs sm:text-sm text-stone-300 mt-3 uppercase tracking-wider">{edu.institution}</p>
+                <p className="text-stone-400 text-sm font-light mt-2 leading-relaxed">{edu.note}</p>
               </div>
             ))}
           </div>
