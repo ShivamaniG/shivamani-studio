@@ -51,7 +51,7 @@ export default function AboutSection() {
               I grew up in Hyderabad and studied computer science at IIIT Kurnool. I&apos;ve always liked figuring out how things work and then making them work better - that&apos;s true for the systems I build and pretty much everything else I do.
             </p>
             <p className="mt-5 text-stone-400 text-sm sm:text-base leading-relaxed font-light">
-              Outside of engineering, I&apos;m into gaming, I lift, and I spend a fair amount of time in hackathons and open-source - less for the competition, more because solving something hard on a deadline keeps me sharp. I care about building things that hold up under real pressure, not just in a demo.
+              Outside of engineering, I&apos;m into gaming, I lift, and I stay active in open-source and hackathons. The common thread is simple: I like pressure, fast feedback, and working with people who care about building something useful.
             </p>
           </div>
 
