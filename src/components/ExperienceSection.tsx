@@ -19,7 +19,7 @@ export default function ExperienceSection() {
     },
     {
       id: 'exp-ml-researcher',
-      role: 'ML Researcher',
+      role: 'AI/ML Researcher',
       company: 'NGCN, IIIT Kurnool',
       period: 'Jun 2024 - Apr 2025',
       description: '',
