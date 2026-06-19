@@ -1,15 +1,5 @@
 import { motion } from 'motion/react';
-import { ArrowRight, Cpu, BookOpen, Coffee, Github, Mail, Linkedin, Briefcase } from 'lucide-react';
-
-const DiscordIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
-  <svg 
-    viewBox="0 0 127.14 96.36" 
-    className={`${className} fill-current`}
-    style={{ display: 'inline-block', verticalAlign: 'middle' }}
-  >
-    <path d="M107.7,8.07A105.15,105.15,0,0,0,77.26,0a77.19,77.19,0,0,0-3.3,6.83A96.67,96.67,0,0,0,53.22,6.83,77.19,77.19,0,0,0,49.88,0,105.15,105.15,0,0,0,19.44,8.07C3.66,31.58-1.86,54.65,1,77.53A105.73,105.73,0,0,0,32,96.36a77.7,77.7,0,0,0,6.63-10.85,68.43,68.43,0,0,1-10.5-5c.87-.64,1.72-1.31,2.53-2a75.48,75.48,0,0,0,65.8,0c.81.69,1.66,1.36,2.53,2a68.43,68.43,0,0,1-10.5,5,77.7,77.7,0,0,0,6.63,10.85,105.73,105.73,0,0,0,31-18.83C129,54.65,122.92,31.58,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53S36.18,40.36,42.45,40.36,53.83,46,53.83,53,48.72,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.24,60,73.24,53S78.41,40.36,84.69,40.36,96.07,46,96.07,53,91,65.69,84.69,65.69Z" />
-  </svg>
-);
+import { ArrowRight, BookOpen, Github, Linkedin, Briefcase } from 'lucide-react';
 
 interface HeroSectionProps {
   onNavigate: (section: string) => void;
@@ -67,7 +57,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
             transition={{ duration: 1, delay: 0.4 }}
             className="mt-8 text-stone-400 text-sm sm:text-base md:text-lg font-light tracking-wide max-w-xl mx-auto leading-relaxed"
           >
-            architecting clean neural pipelines, production-grade LLM integrations, and robust real-time distributed application systems.
+            I build AI that actually works. Not demos, not prototypes - production systems running right now. 2+ years building agentic systems in production.
           </motion.p>
 
           {/* View Projects Pill corresponding to "LAUNCH APP" */}
@@ -207,9 +197,15 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
               <h4 className="font-display font-medium text-lg text-stone-800 dark:text-stone-100 tracking-tight leading-snug mt-1">AI Engineer @ Antz AI</h4>
               <p className="text-stone-500 dark:text-stone-400 text-xs mt-1 leading-snug font-serif italic">Agentic Workflows and Prod AI Pipelines</p>
               
-              <div className="mt-3.5 pt-3 border-t border-stone-200/20 dark:border-stone-800/40 flex items-center justify-between">
-                <span className="text-[10px] text-stone-450">Networks & reach</span>
-                <span className="text-[11px] font-semibold text-stone-700 dark:text-stone-300">1,200+ followers</span>
+              <div className="mt-3.5 pt-3 border-t border-stone-200/20 dark:border-stone-800/40 grid grid-cols-2 gap-3">
+                <div className="flex flex-col">
+                  <span className="text-[10px] text-stone-450">Production focus</span>
+                  <span className="text-[11px] font-semibold text-stone-700 dark:text-stone-300">2+ years</span>
+                </div>
+                <div className="flex flex-col text-right">
+                  <span className="text-[10px] text-stone-450">Networks & reach</span>
+                  <span className="text-[11px] font-semibold text-stone-700 dark:text-stone-300">1,200+ followers</span>
+                </div>
               </div>
             </div>
 

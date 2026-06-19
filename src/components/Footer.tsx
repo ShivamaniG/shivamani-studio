@@ -48,7 +48,7 @@ export default function Footer() {
             </div>
             
             <p className="text-stone-400 text-sm leading-relaxed max-w-sm mt-2 font-light">
-              Engineering reliable platforms at the frontier of artificial intelligence, model pipeline optimization, and dynamic distributed services.
+              Building reliable AI products, agent workflows, and backend systems that are useful after the demo.
             </p>
 
             <div className="flex items-center gap-3 mt-4 text-stone-400">

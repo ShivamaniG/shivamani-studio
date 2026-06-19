@@ -21,10 +21,9 @@ export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
 
   const navItems = [
     { label: 'HOME', value: 'home' },
-    { label: 'SKILLS', value: 'skills' },
+    { label: 'PROJECTS', value: 'projects' },
     { label: 'EXPERIENCE', value: 'experience' },
     { label: 'ABOUT', value: 'about' },
-    { label: 'PROJECTS', value: 'projects' },
   ];
 
   const handleNavClick = (value: string) => {
